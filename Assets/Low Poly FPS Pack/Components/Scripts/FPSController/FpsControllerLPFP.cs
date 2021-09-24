@@ -10,6 +10,14 @@ namespace FPSControllerLPFP
     [RequireComponent(typeof(AudioSource))]
     public class FpsControllerLPFP : MonoBehaviour
     {
+        [Header("Gun Options")]
+        [Tooltip("These options control how the current gun works")]
+        public float damage = 10f;
+        public float range = 100f;
+        public GameObject armature;
+
+        public Camera fpsCam;
+
 #pragma warning disable 649
 		[Header("Arms")]
         [Tooltip("The transform component that holds the gun camera."), SerializeField]
@@ -144,9 +152,24 @@ namespace FPSControllerLPFP
         /// Moves the camera to the character, processes jumping and plays sounds every frame.
         private void Update()
         {
-			arms.position = transform.position + transform.TransformVector(armPosition);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+
+            arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
             PlayFootstepSounds();
+            
+        }
+
+        void Shoot()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            {
+                armature.SetActive(true);
+            }
         }
 
         private void RotateCameraAndCharacter()

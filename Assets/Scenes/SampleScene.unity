@@ -271,6 +271,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114934168941240176, guid: 4eb058a6138ad204cb7881afd5e4ccde, type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 1522965469}
+    - target: {fileID: 114934168941240176, guid: 4eb058a6138ad204cb7881afd5e4ccde, type: 3}
+      propertyPath: armature
+      value: 
+      objectReference: {fileID: 1989944127}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb058a6138ad204cb7881afd5e4ccde, type: 3}
 --- !u!1 &1425119290
@@ -571,24 +579,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1681993123658676, guid: dd07db3675001704890aaeab9ee93c75, type: 3}
   m_PrefabInstance: {fileID: 1775291010}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2015707386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1683616370832842, guid: 4eb058a6138ad204cb7881afd5e4ccde, type: 3}
-  m_PrefabInstance: {fileID: 999458983}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2015707387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015707386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263a6f73a3a32fc449629610ae9f5227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  range: 100
-  armature: {fileID: 1989944127}
-  fpsCam: {fileID: 1522965469}
