@@ -152,10 +152,15 @@ namespace FPSControllerLPFP
         /// Moves the camera to the character, processes jumping and plays sounds every frame.
         private void Update()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1")) // && range <= 100 )
             {
                 Shoot();
             }
+            /*else
+            {
+                physicsShoot();
+            }
+            */
 
             arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
@@ -171,6 +176,25 @@ namespace FPSControllerLPFP
                 armature.SetActive(true);
             }
         }
+
+        /*
+        
+        void physicsShoot()
+        {
+        
+            //Spawn bullet from bullet spawnpoint
+			var bullet = (Transform)Instantiate (
+			Prefabs.bulletPrefab,
+			Spawnpoints.bulletSpawnPoint.transform.position,
+			Spawnpoints.bulletSpawnPoint.transform.rotation);
+
+		    //Add velocity to the bullet
+			bullet.GetComponent<Rigidbody>().velocity = 
+			bullet.transform.forward * bulletForce;
+        
+        }
+        
+        */
 
         private void RotateCameraAndCharacter()
         {
